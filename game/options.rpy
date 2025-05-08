@@ -12,24 +12,30 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("The Phrygian Resistance")
+define config.name = _("Η Αντίσταση των Φρυγάνων")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "0.8"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+
+This visual novel was created for English 12: Science Fiction & Dystopia.
+
+The name of this game, Η Αντίσταση των Φρυγάνων, is derived from the Greek translation
+of 'The Phrygian Resistance,' which alludes to Le Maquis, a French resistance group
+which fought the German occupation of France in World War II.
 """)
 
 
@@ -46,9 +52,9 @@ define build.name = "ThePhrygianResistance"
 ## to the player by default. Setting one of these to False will hide the
 ## appropriate mixer.
 
-define config.has_sound = True
-define config.has_music = True
-define config.has_voice = True
+define config.has_sound = False
+define config.has_music = False
+define config.has_voice = False
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
@@ -120,7 +126,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 900
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
@@ -150,7 +156,7 @@ define config.save_directory = "ThePhrygianResistance-1746742595"
 ##
 ## The icon displayed on the taskbar or dock.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "images/logo.jpeg"
 
 
 ## Build configuration #########################################################
