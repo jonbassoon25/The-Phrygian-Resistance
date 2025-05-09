@@ -4,10 +4,10 @@
 # name of the character.
 
 define player = Character("Oskar Gottfried", color="#f00032")
-
 define regime_leader = Character("Paladin Victor Franz", color="#880000")
-
 define resistance_fighter = Character("Robert Manfrïed", color="#00d0d0")
+
+define content_censored = False
 
 # The game starts here.
 
@@ -63,6 +63,24 @@ label start:
     "And they were the sole power of the broken world."
     "They are the sole power of the broken world."
     "They are the sole power of this world."
+    "..."
+
+
+label beginning:
+    "You, [player], wake up to the sound of your government-provided alarm clock on the brisk morning of July 24th, 2137."
+    
+    menu censor_content:
+        "And as you get out of bed you face your first choice, which is displayed via the screen inside your eyes."
+        "Censor Graphic Images":
+            $ content_censored = True
+        "Don't Censor Graphic Images":
+            $ content_censored = False
+    
+    "You continue about your morning routine before arriving at your place of work."
+    "A large skyscraper in the center of the world's only city."
+
+    
+        
 
     # This ends the game.
     return
