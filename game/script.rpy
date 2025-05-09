@@ -12,27 +12,53 @@ define content_censored = False
 # The game starts here.
 
 label start:
+    scene earth
+    with fade
     "2089, the last year of the old world..."
     "The year of a war brought on by the limitless greed of superpowers, and the limited resources of the planet to which they were confined."
     
-    "The war was the most destructive in the history of humanity."
-    "Hundreds of millions of soldiers forced into the meat grinders of machine gun fire.{w=0.5} Conventional strikes of unfathomable scale.{w=0.75}\nBillions of lives lost."
+    scene war modern
+    with dissolve
 
-    "But as the war raged on, the great powers got desperate for a quick victory.{w=0.2} Their resources completely depleted, their land in a state of near complete destruction, and their populations in a state of irreparable decay."
+    "The war was the most destructive in the history of humanity."
+    scene combat modern
+    with dissolve
+    "Hundreds of millions of soldiers forced into the meat grinders of machine gun fire."
+    scene bombing modern
+    with dissolve
+    "Conventional strikes of unfathomable scale."
+    scene destruction conventional
+    with dissolve
+    "Billions of lives were lost."
+
+    "But as the war raged on, the great powers got desperate for a quick victory."
+    "Their resources completely depleted, their land in a state of near complete destruction, and their populations in a state of irreparable decay."
+    
+    scene black
+    with dissolve
     "But they had yet to turn to their most destructive technology—one that allowed man to wield the power of stars.{w=0.5} One that had once only been seen as a deterrent, but that had now become the offensive weapon of choice."
     
     "It was unclear who fired first;{w=0.25} nor did that matter...{w=0.5} The effects of the decision were catastrophic."
-    #Explosion sound & image
+    scene nuclear explosion
+    with Fade(0.1, 1, 4, color="#FFF")
     "The great cities of the world were reduced to ash under balls of nuclear fire."
+    scene firestorm
+    with dissolve
     "The smaller nations immediately capitulating as their lands erupted into blazing infernos."
 
     "But still, these superpowers survived."
     "Their land decimated,{w=0.1} resources non-existent,{w=0.1} and populations nearly wiped off the face of the earth."
+
+    scene nuclear dustcloud
+    with dissolve
     "Their world enveloped in an impenetrable dark cloud of ash;{w=0.2} the seasons forgotten in favor of a harsh winter that would last for the next 500 years."
 
+    scene military formation
+    with dissolve
     "But their militaries{w=0.25}—their militaries still stood strong."
     "And so began the last days of their control."
 
+    scene black
     "The land of smaller countries was annexed and ransacked for paltry sums of resources.{w=0.3}\nBut that was not enough to satisfy the growing demands of the starved empires."
 
     "As their stockpiled resources dwindled, modern technologies became too expensive to field, and tactics slowly devolved until there were only infantrymen."
@@ -79,7 +105,7 @@ label beginning:
     "You continue about your morning routine before arriving at your place of work."
     "A large skyscraper in the center of the world's only city."
 
-    
+
         
 
     # This ends the game.

@@ -3,3 +3,4 @@ game/cache
 .DS_Store
 log.txt
 game/saves
+traceback.txt
