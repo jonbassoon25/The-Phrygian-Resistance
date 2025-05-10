@@ -4,3 +4,4 @@ game/cache
 log.txt
 game/saves
 traceback.txt
+errors.txt

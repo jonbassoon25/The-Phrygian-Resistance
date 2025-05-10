@@ -12,6 +12,8 @@ define content_censored = False
 # The game starts here.
 
 label start:
+    play music "Introduction Background.mp3" loop
+
     scene earth
     with fade
     "2089, the last year of the old world..."
@@ -39,8 +41,11 @@ label start:
     "But they had yet to turn to their most destructive technology—one that allowed man to wield the power of stars.{w=0.5} One that had once only been seen as a deterrent, but that had now become the offensive weapon of choice."
     
     "It was unclear who fired first;{w=0.25} nor did that matter...{w=0.5} The effects of the decision were catastrophic."
+    # Raw nuclear test footage for audio: https://catalog.archives.gov/id/25979
+    #play sound "Nuclear Explosion - short" fadeout 0
+    play sound "Nuclear Explosion - long.mp3" fadeout 1.5 noloop
     scene nuclear explosion
-    with Fade(0.1, 1, 4, color="#FFF")
+    with Fade(0, 1, 4, color="#FFF")
     "The great cities of the world were reduced to ash under balls of nuclear fire."
     scene firestorm
     with dissolve
@@ -58,30 +63,47 @@ label start:
     "But their militaries{w=0.25}—their militaries still stood strong."
     "And so began the last days of their control."
 
-    scene black
+    scene looting soldigers
+    with dissolve
     "The land of smaller countries was annexed and ransacked for paltry sums of resources.{w=0.3}\nBut that was not enough to satisfy the growing demands of the starved empires."
 
     "As their stockpiled resources dwindled, modern technologies became too expensive to field, and tactics slowly devolved until there were only infantrymen."
-    #Scene change to WWI trenches
+    
+    scene trenches
+    with fade
     "Infantrymen and hundreds of thousands of miles of curving trenches."
-
+    
+    scene undersupplied soldigers
+    with dissolve
     "But all sides knew the collapse of their fronts was inevitable."
-    "Their men only stayed under threat of death and the measly rations that they earned."
+    "Their men only stayed under threat of death and for the measly rations that they earned."
     "And their ammunition stockpiles were almost completely gone."
 
+    scene asian front
+    with dissolve
     "The Asian fronts were the first to collapse."
     "The supplies sent by the superpowers being redirected elsewhere;{w=0.2} the tens of millions of war-torn souls were forgotten."
     "Without resupply they would soon die in the freezing deserts of central asia,{w=0.1} and the sub-zero forests of northern siberia."
 
+    scene retreating soldigers
+    with dissolve
     "Soon, too, collapsed the fronts in Africa,{w=0.2} South America,{w=0.2} and Australia;{w=0.4} their resources completely spent on the products of war."
     "The great powers{w=0.25}—The only powers{w=0.25}—of the earth consolidating their resources to fight until the very last man perished."
 
+    scene stranded island garrisons
+    with dissolve
     "Millions of men were forgotten on the uninhabitable islands of the seven seas."
+    scene african front
+    with dissolve
     "And millions more perished in the deserts of Arabia and in the mountains of northern Europe."
 
+    scene late trenches
+    with dissolve
     "Slowly, the main fronts of the war decayed.{w=0.4}\nThe great powers slowly losing their grasp on their soldiers."
     "Soldiers who had only stayed to aquire sustenance in the cold nuclear wasteland that used to be their world."
 
+    scene black
+    with dissolve
     "Until,{w=0.2} one day,{w=0.2} after billions of casualties:{w=0.5} the fighting stopped."
     "Leaving the victor alone and uncontested."
 
@@ -89,6 +111,7 @@ label start:
     "And they were the sole power of the broken world."
     "They are the sole power of the broken world."
     "They are the sole power of this world."
+    stop music fadeout 1.0
     "..."
 
 
