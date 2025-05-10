@@ -12,7 +12,7 @@ define content_censored = False
 # The game starts here.
 
 label start:
-    play music "Introduction Background.mp3" loop
+    play music "Introduction Background.mp3" loop volume 0.5
 
     scene earth
     with fade
@@ -42,8 +42,8 @@ label start:
     
     "It was unclear who fired first;{w=0.25} nor did that matter...{w=0.5} The effects of the decision were catastrophic."
     # Raw nuclear test footage for audio: https://catalog.archives.gov/id/25979
-    #play sound "Nuclear Explosion - short" fadeout 0
-    play sound "Nuclear Explosion - long.mp3" fadeout 1.5 noloop
+    #play sound "Nuclear Explosion - short" noloop
+    play sound "Nuclear Explosion - long.mp3" noloop
     scene nuclear explosion
     with Fade(0, 1, 4, color="#FFF")
     "The great cities of the world were reduced to ash under balls of nuclear fire."

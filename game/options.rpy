@@ -18,7 +18,7 @@ define config.name = _("Η Αντίσταση των Φρυγάνων")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = False
+define gui.show_name = True
 
 
 ## The version of the game.
@@ -52,8 +52,8 @@ define build.name = "ThePhrygianResistance"
 ## to the player by default. Setting one of these to False will hide the
 ## appropriate mixer.
 
-define config.has_sound = False
-define config.has_music = False
+define config.has_sound = True
+define config.has_music = True
 define config.has_voice = False
 
 
@@ -68,7 +68,7 @@ define config.has_voice = False
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "main-theme.mp3"
 
 
 ## Transitions #################################################################
