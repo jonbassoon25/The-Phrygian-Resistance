@@ -49,7 +49,7 @@ label start:
     "The great cities of the world were reduced to ash under balls of nuclear fire."
     scene firestorm
     with dissolve
-    "The smaller nations immediately capitulating as their lands erupted into blazing infernos."
+    "With smaller nations immediately capitulating as their lands erupted into blazing infernos."
 
     "But still, these superpowers survived."
     "Their land decimated,{w=0.1} resources non-existent,{w=0.1} and populations nearly wiped off the face of the earth."
