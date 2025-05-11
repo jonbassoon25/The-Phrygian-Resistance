@@ -3,12 +3,14 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define player = Character("Oskar Gottfried", color="#f00032")
+define player = Character("You", color="#f00032")
 define regime_leader = Character("Paladin Victor Franz", color="#880000")
 define resistance_fighter = Character("Robert Manfrïed", color="#00d0d0")
+define unnamed_official = Character("Military Official", color="#990000")
 
 define content_censored = False
 define document_read = False
+define bloodnote_read = False
 
 # The game starts here.
 
@@ -167,6 +169,9 @@ label beginning:
     hide classified folder
     with dissolve
     if not document_read:
+        play sound "paper-shreader.mp3" volume 1.0 #this is intentional
+        "You destroy the document without even taking it out of the folder, and continue on with your day."
+        stop sound fadeout 1.0
         jump post_document
 
 
@@ -194,18 +199,49 @@ label reading_document:
     "The Document" "Before that can happen, it is clear that whoever blocked our progress must be dealt with first. {w=0.5}Included is a note we found in the raided storeroom, stained with the blood of its guard."
     "\[End of the Document]"
 
-    "Before destroying the document, you notice a small note stuck on its back"
-    show bloodstained note at truecenter
-    with dissolve
-    "Bloodstained Note" "Ζήτω οι Φρύγες. Long Live the Phrygian Resistance!"
+    "You notice a small note stuck on the back of the document"
+    menu read:
+        "Do you read it?"
+        "Yes":
+            $ bloodnote_read = True
+            show bloodstained note at truecenter
+            with dissolve
+            "Bloodstained Note" "Ζήτω οι Φρύγες. Long Live the Phrygian Resistance!"
+        "No":
+            $ bloodnote_read = False
 
     hide bloodstained note
     hide classified materials
     with dissolve
+    play sound "paper-shreader.mp3" volume 0.2
+    "As you destory the document so that nobody could notice you reading it, you contemplate it's meaning."
+    stop sound fadeout 1.0
+    "You had always been told that The Regime was alone in the world. It's savior."
+    "But was that really the case?"
+
+    if bloodnote_read:
+        "Who even are the Phrygians anyways?"
+
+    "Regardless, you decide to continue your day as normal so you don't appear suspicious."
 
 
 label post_document:
-    "post document"
+    play sound "buzzer.mp3" volume 0.4
+    "You soon hear the notification for lunch, allowing you to put your work aside to get food."
+
+    scene office hallway
+    with dissolve
+    "However, on your way to the building's cafeteria, you are stopped by a military official."
+
+    show military official
+    with moveinleft
+    unnamed_official "Hello sir, are you Oskar Gottfrïed?"
+
+    "He speaks again without giving you a change to answer."
+
+    unnamed_official "You have been selected for conscription into the Global Coalition Army. Follow me."
+
+    
 
     # This ends the game.
     return
