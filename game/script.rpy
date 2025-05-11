@@ -173,9 +173,33 @@ label beginning:
 label reading_document:
     show classified materials at truecenter
     with dissolve
-    "The Document" "Project Falcon: Classified{w=0.5}\nFor the eyes of Regime Leadership {b}Only{/b}"
-    "The Document" "April 17, 2104 - "
+    "The Document" "Messages from Project Falcon: Classified{w=0.5}\nFor the eyes of Regime Leadership {b}Only{/b}"
+    play sound "page-flip.mp3" volume 0.1
+    "The Document" "April 17th, 2104 - The collection of resources continues to yield little to none of the components required for this project."
+    "The Document" "It's a miracle we can find anything useful in this wasteland."
+    play sound "page-flip.mp3" volume 0.1
+    "The Document" "July 23rd, 2104 - Incremental progress continues on the collection of resources; however, rocket fuel has become increasingly hard to come by."
+    "The Document" "Our scouts have also reported sightings of humanoid figures in the distance. This has not been confirmed."
+    play sound "page-flip.mp3" volume 0.1
+    "The Document" "I believe The Regime continues to be the only group with the resources to stay alive outside of our cities."
+    play sound "page-flip.mp3" volume 0.1
+    "The Document" "September 14th, 2104 - The collection of resources is almost complete, and we are setting up camp to pass the winter."
+    "The Document" "Our scouts have reported seeing dim lights in the distance the last few nights. We might not be alone out here."
+    play sound "page-flip.mp3" volume 0.1
+    "The Document" "September 23rd, 2104 - A group of unidentified individuals assaulted the camp last night. They were promptly dealt with."
+    "The Document" "However, it is clear that the military must be prepared to fight what could possibly be another great war in the near future."
+    play sound "page-flip.mp3" volume 0.1
+    "The Document" "November 11th, 2104 - Our collection of rations disappeared last night. Someone snuck into the camp without being detected by the lookouts."
+    "The Document" "We most likely won't make it through the winter. The coordinates of our camp are attached in this letter so that the resources we collected may be recovered."
+    "The Document" "Before that can happen, it is clear that whoever blocked our progress must be dealt with first. {w=0.5}Included is a note we found in the raided storeroom, stained with the blood of its guard."
+    "\[End of the Document]"
 
+    "Before destroying the document, you notice a small note stuck on its back"
+    show bloodstained note at truecenter
+    with dissolve
+    "Bloodstained Note" "Ζήτω οι Φρύγες. Long Live the Phrygian Resistance!"
+
+    hide bloodstained note
     hide classified materials
     with dissolve
 
