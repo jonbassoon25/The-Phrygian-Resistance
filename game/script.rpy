@@ -8,6 +8,7 @@ define regime_leader = Character("Paladin Victor Franz", color="#880000")
 define resistance_fighter = Character("Robert Manfrïed", color="#00d0d0")
 
 define content_censored = False
+define document_read = False
 
 # The game starts here.
 
@@ -116,7 +117,15 @@ label start:
 
 
 label beginning:
+    scene black
+    with fade
+    play sound "Alarm.mp3" loop
+    scene bedroom
+    with fade
+
     "You, [player], wake up to the sound of your government-provided alarm clock on the brisk morning of July 24th, 2137."
+    stop sound fadeout 0.5
+    play music "Dystopian-Background.mp3" fadein 2.0 volume 0.15
     
     menu censor_content:
         "And as you get out of bed you face your first choice, which is displayed via the screen inside your eyes."
@@ -125,11 +134,54 @@ label beginning:
         "Don't Censor Graphic Images":
             $ content_censored = False
     
-    "You continue about your morning routine before arriving at your place of work."
-    "A large skyscraper in the center of the world's only city."
+    "You continue about your morning routine before promptly arriving at your place of work."
+
+    scene city buildings
+    with dissolve
+    "An unassuming skyscraper in the center of europe's only city."
+
+    scene office
+    with dissolve
+    "You enter the building and find your place in The Department of Information."
+    "Your task today is to help with the removal of documents published by the 'Fake New Organizations' of the past."
+
+    scene full desk
+    with dissolve
+    "You certainly have your work cut out for you today."
+    
+    scene cubicle
+    with dissolve
+    "You begin the painstaking process of bringing these documents to your desk to sort, and then you begin sorting; removing any documents published by organizations that were determined to be 'Fake news'."
+
+    show classified folder at truecenter
+    with dissolve
+    "After a number of hours of painful work, you come across a folder labeled 'Classified' with no news organization listed on it."
+
+    menu decision_one:
+        "What do you do?"
+        "Open the folder and read it's contents before destroying it":
+            $ document_read = True
+        "Don't open the folder and destory it":
+            $ document_read = False
+    
+    hide classified folder
+    with dissolve
+    if not document_read:
+        jump post_document
 
 
-        
+label reading_document:
+    show classified materials at truecenter
+    with dissolve
+    "The Document" "Project Falcon: Classified{w=0.5}\nFor the eyes of Regime Leadership {b}Only{/b}"
+    "The Document" "April 17, 2104 - "
+
+    hide classified materials
+    with dissolve
+
+
+label post_document:
+    "post document"
 
     # This ends the game.
     return
