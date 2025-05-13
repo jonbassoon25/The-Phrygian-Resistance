@@ -4,5 +4,12 @@
         "**/*.rpa": true,
         "**/*.rpymc": true,
         "**/cache/": true
-    }
+    },
+    "cSpell.words": [
+        "bloodnote",
+        "dustcloud",
+        "fadein",
+        "Gottfrïed",
+        "noloop"
+    ]
 }

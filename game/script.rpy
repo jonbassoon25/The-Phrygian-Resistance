@@ -5,7 +5,7 @@
 
 define player = Character("You", color="#f00032")
 define regime_leader = Character("Paladin Victor Franz", color="#880000")
-define resistance_fighter = Character("Robert Manfrïed", color="#00d0d0")
+define resistance_fighter = Character("Robert Gustav", color="#00d0d0")
 define unnamed_official = Character("Military Official", color="#990000")
 
 define content_censored = False
@@ -25,7 +25,7 @@ label start:
     scene war modern
     with dissolve
 
-    "The war was the most destructive in the history of humanity."
+    "The war was the most destructive in the history of humanity:"
     scene combat modern
     with dissolve
     "Hundreds of millions of soldiers forced into the meat grinders of machine gun fire."
@@ -41,9 +41,9 @@ label start:
     
     scene black
     with dissolve
-    "But they had yet to turn to their most destructive technology—one that allowed man to wield the power of stars.{w=0.5} One that had once only been seen as a deterrent, but that had now become the offensive weapon of choice."
+    "But they had yet to turn to their most destructive technology—one that allowed man to wield the power of stars.{w=0.5} Once only seen as a deterrent, it became the offensive weapon of choice."
     
-    "It was unclear who fired first;{w=0.25} nor did that matter...{w=0.5} The effects of the decision were catastrophic."
+    "It was unclear who fired first;{w=0.25} but it did not matter...{w=0.5} The effects were catastrophic."
     # Raw nuclear test footage for audio: https://catalog.archives.gov/id/25979
     #play sound "Nuclear Explosion - short" noloop
     play sound "Nuclear Explosion - long.mp3" noloop
@@ -66,17 +66,17 @@ label start:
     "But their militaries{w=0.25}—their militaries still stood strong."
     "And so began the last days of their control."
 
-    scene looting soldigers
+    scene looting soldiers
     with dissolve
     "The land of smaller countries was annexed and ransacked for paltry sums of resources.{w=0.3}\nBut that was not enough to satisfy the growing demands of the starved empires."
 
-    "As their stockpiled resources dwindled, modern technologies became too expensive to field, and tactics slowly devolved until there were only infantrymen."
+    "As their stockpiled resources dwindled, modern technologies became too expensive to field, and tactics slowly devolved until there were only infantrymen..."
     
     scene trenches
     with fade
     "Infantrymen and hundreds of thousands of miles of curving trenches."
     
-    scene undersupplied soldigers
+    scene undersupplied soldiers
     with dissolve
     "But all sides knew the collapse of their fronts was inevitable."
     "Their men only stayed under threat of death and for the measly rations that they earned."
@@ -86,12 +86,12 @@ label start:
     with dissolve
     "The Asian fronts were the first to collapse."
     "The supplies sent by the superpowers being redirected elsewhere;{w=0.2} the tens of millions of war-torn souls were forgotten."
-    "Without resupply they would soon die in the freezing deserts of central asia,{w=0.1} and the sub-zero forests of northern siberia."
+    "Without resupply they died in the freezing deserts of central Asia,{w=0.1} and the sub-zero forests of Northern Siberia."
 
-    scene retreating soldigers
+    scene retreating soldiers
     with dissolve
     "Soon, too, collapsed the fronts in Africa,{w=0.2} South America,{w=0.2} and Australia;{w=0.4} their resources completely spent on the products of war."
-    "The great powers{w=0.25}—The only powers{w=0.25}—of the earth consolidating their resources to fight until the very last man perished."
+    "The great powers{w=0.25}—The only powers{w=0.25}—of the earth consolidated their resources to fight until the very last man perished."
 
     scene stranded island garrisons
     with dissolve
@@ -102,8 +102,8 @@ label start:
 
     scene late trenches
     with dissolve
-    "Slowly, the main fronts of the war decayed.{w=0.4}\nThe great powers slowly losing their grasp on their soldiers."
-    "Soldiers who had only stayed to aquire sustenance in the cold nuclear wasteland that used to be their world."
+    "Slowly, as the main fronts of the war decayed, the great powers slowly lost their grasp on their soldiers."
+    "Soldiers who had only stayed to acquire sustenance in the cold nuclear wasteland that used to be their world."
 
     scene black
     with dissolve
@@ -125,7 +125,7 @@ label beginning:
     scene bedroom
     with fade
 
-    "You, [player], wake up to the sound of your government-provided alarm clock on the brisk morning of July 24th, 2137."
+    "You wake up to the sound of your government-provided alarm clock on the brisk morning of July 24th, 2137."
     stop sound fadeout 0.5
     play music "Dystopian-Background.mp3" fadein 2.0 volume 0.15
     
@@ -140,7 +140,7 @@ label beginning:
 
     scene city buildings
     with dissolve
-    "An unassuming skyscraper in the center of europe's only city."
+    "An unassuming skyscraper in the center of Europe's only city."
 
     scene office
     with dissolve
@@ -163,13 +163,13 @@ label beginning:
         "What do you do?"
         "Open the folder and read it's contents before destroying it":
             $ document_read = True
-        "Don't open the folder and destory it":
+        "Don't open the folder and destroy it":
             $ document_read = False
     
     hide classified folder
     with dissolve
     if not document_read:
-        play sound "paper-shreader.mp3" volume 1.0 #this is intentional
+        play sound "paper-shredder.mp3" volume 1.0 #this is intentional
         "You destroy the document without even taking it out of the folder, and continue on with your day."
         stop sound fadeout 1.0
         jump post_document
@@ -213,8 +213,8 @@ label reading_document:
     hide bloodstained note
     hide classified materials
     with dissolve
-    play sound "paper-shreader.mp3" volume 0.2
-    "As you destory the document so that nobody could notice you reading it, you contemplate it's meaning."
+    play sound "paper-shredder.mp3" volume 0.2
+    "As you destroy the document so that nobody could notice you reading it, you contemplate it's meaning."
     stop sound fadeout 1.0
     "You had always been told that The Regime was alone in the world. It's savior."
     "But was that really the case?"
@@ -234,14 +234,76 @@ label post_document:
     "However, on your way to the building's cafeteria, you are stopped by a military official."
 
     show military official
-    with moveinleft
+    with dissolve
     unnamed_official "Hello sir, are you Oskar Gottfrïed?"
 
     "He speaks again without giving you a change to answer."
 
     unnamed_official "You have been selected for conscription into the Global Coalition Army. Follow me."
 
+    menu follow:
+        "Do you follow him?"
+        "Yes":
+            "You follow him to a military building."
+        "No":
+            unnamed_official "Come on now, let's go."
+            "He grabs you by the arm and drags you with him to a military building."
     
+    scene conscription office
+    with dissolve
+    "You are assigned your military equipment: 2 sets of clothes, a surprisingly light bulletproof vest, and a rifle."
+    
+    scene trucking
+    with dissolve
+    "And then you are shipped away from the city, and into the surrounding wasteland."
+
+    scene black
+    with fade
+    "Later than night you are woken up by a man whom you have never seen before."
+
+    "???" "Are you a new conscript?"
+
+    menu question: #the progression of menu names is really something spectacular, isn't it.
+        "Yes":
+            "???" "Did you read the document that was sent to you secretly? The one about Project Falcon?"
+            if document_read:
+                menu question2:
+                    "Yes":
+                        "???" "So then you know why you were conscripted to fight."
+                    "No":
+                        "???" "I see... You passed this inspection."
+                        "He quickly leaves."
+                        jump immoral_path
+            else:
+                menu question2b:
+                    "No":
+                        "???" "I see... You passed this inspection."
+                        "He quickly leaves."
+                        jump immoral_path
+        "No":
+            "???" "Strange, I could've sworn you were."
+            "He walks away."
+            jump immoral_path
+    
+    "???" "The regime has enemies. The Phrygana."
+    "???" "They are planning to assault one of their villages tomorrow. One full of innocent people without any protection."
+    "???" "I'm asking you for your help in telling The Phrygana of this before it is too late."
+    "???" "Will you help?"
+    menu question:
+        "Yes":
+            "???" "Good, come with me. Let's get out of here."
+        "No":
+            "???" "You're a sick person. Serving the regime without a thought of anyone else."
+            "He quickly leaves."
+            jump immoral_path
+    
+    "???" "By the way, I'm [resistance_fighter]."
+
+
+
+
+label immoral_path:
+    "Early the next morning, you are \{Insert more here}"
 
     # This ends the game.
     return
