@@ -342,10 +342,55 @@ label side_with_revolutionaries:
     menu question5:
         ""
         "I know of project Falcon.":
-            
+            "???" "So then you know of the Regime's efforts to suppress us. The Phrygana."
         "{i}Stare blankly{/i}":
             "He shakes his head, sighs, and leaves."
             jump servant_death
+
+    "???" "We will let you live on one condition. That you infiltrate the Regime's camp and distract the guards."
+    "???" "Then we will be able to attack before they have a chance to raid our village."
+
+    "???" "Are you going to do this for us?"
+    menu question6:
+        "Yes":
+            "???" "Good. You will be sent out soon. We will know when they are distracted."
+        "No":
+            "???" "Then we have no use for you. Servant of the Regime."
+            jump servant_death
+    
+    "The bag is put back over your head and you are dragged back into the forest."
+    scene black
+    with fade
+    "..."
+    # scene
+    "After a short time, the bag is removed and you are uncuffed in the forest just outside of the Regime's camp."
+    "Your captors leave and you are left alone to think about your plan"
+    menu plan:
+        "How should you distract the guards?"
+        
+        "Find a grenade to throw into the officer's quarters":
+            jump grenade_path
+        "Set fire to one of the buildings":
+            menu which_building:
+                "Should I set fire to"
+                "A building on the outskirts of the camp":
+                    jump outskirts_path
+                "A building near the center of the camp":
+                    jump center_path
+
+
+label grenade_path:
+    "You enter the camp, going towards the ammunition stockpile to get a grenade."
+    "As you near the stockpile, you see a small group of soldiers stationed outside."
+    "You decide to sneak around them; however, as you enter the building, you are seen."
+    "The soldiers immediately turn around and fire at you."
+    "You die quickly, but painfully, as your torso is torn apart."
+    jump death
+
+label outskirts_path:
+    
+
+label center_path:
 
 
 label questioned_allegiance:
@@ -365,7 +410,9 @@ label immoral_path:
 
 
 label death:
-    "You have died."
+    scene black
+    with fade
+    "You have died. Better luck next time."
 
     # This ends the game.
     return
