@@ -300,10 +300,43 @@ label post_document:
     "???" "By the way, I'm [resistance_fighter]."
 
 
+label side_with_revolutionaries:
+    resistance_fighter "Be careful not to wake anyone. We don't want to get caught sneaking out."
+    "Exit the barracks with [resistance_fighter], careful not to disturb the sleeping soldiers."
+    "However, as you sneak out of the camp's walls, you are spotted by the perimeter guards."
+    "They shout 'Halt! What are you doing?!' and proceed to chase to you as [resistance_fighter] pulls you forward."
+    
+    "Bullets whiz past you as you run away from the camp."
+    "As you reach the edge of a forested area, [resistance_fighter] is hit and falls to the ground, groaning."
+
+    menu decision:
+        "Do you stay and help him?"
+        "Yes":
+            "You kneel down next to him, stopping the bleeding as soldiers from the camp run towards you."
+            menu last_chance:
+                "Do you still stay?"
+                "Yes":
+                    jump helpful_death
+                "No":
+                    "You leave him behind and run into the forest. His blood dripping off of your hands."
+        "No":
+            "You leave him behind and run into the forest."
+
+
+label helpful_death:
+    "As the soldiers get closer, they raise their rifles and fire on you and [resistance_fighter]."
+    "Both of you are killed."
+    jump death
 
 
 label immoral_path:
-    "Early the next morning, you are \{Insert more here}"
+    "Early the next morning, you are woken up at the break of dawn."
+
+
+    
+
+label death:
+    "You have died."
 
     # This ends the game.
     return
