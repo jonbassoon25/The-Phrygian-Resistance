@@ -289,7 +289,7 @@ label post_document:
     "???" "They are planning to assault one of their villages tomorrow. One full of innocent people without any protection."
     "???" "I'm asking you for your help in telling The Phrygana of this before it is too late."
     "???" "Will you help?"
-    menu question:
+    menu question3:
         "Yes":
             "???" "Good, come with me. Let's get out of here."
         "No":
@@ -313,14 +313,45 @@ label side_with_revolutionaries:
         "Do you stay and help him?"
         "Yes":
             "You kneel down next to him, stopping the bleeding as soldiers from the camp run towards you."
-            menu last_chance:
-                "Do you still stay?"
-                "Yes":
-                    jump helpful_death
-                "No":
-                    "You leave him behind and run into the forest. His blood dripping off of your hands."
+            jump helpful_death
         "No":
             "You leave him behind and run into the forest."
+
+    "As you run through the forest, you are grabbed from behind and pulled to the ground."
+    "A bag is put over your head and you are handcuffed."
+    scene black
+    with fade
+    
+    "You are dragged through the forest and eventually feel yourself be brought inside of a building."
+    "Soon later, you are placed on a chair and the bag is removed from your head."
+
+    #scene interrogation
+    #show interrogator
+
+    "???" "Hello."
+    "???" "Is there anything you would like to tell us? Your reason for fleeing the camp?"
+
+    menu question4:
+        ""
+        "Yes, The Regime is planning to assault a village full of civilians.":
+            "He looks at you skeptically."
+        "No.":
+            jump questioned_allegiance
+            
+    "And why should we believe you?"
+    menu question5:
+        ""
+        "I know of project Falcon.":
+            
+        "{i}Stare blankly{/i}":
+            "He shakes his head, sighs, and leaves."
+            jump servant_death
+
+
+label questioned_allegiance:
+
+
+label servant_death:
 
 
 label helpful_death:
@@ -332,8 +363,6 @@ label helpful_death:
 label immoral_path:
     "Early the next morning, you are woken up at the break of dawn."
 
-
-    
 
 label death:
     "You have died."
