@@ -7,3 +7,4 @@ traceback.txt
 errors.txt
 *.rpyc
 *.rpymc
+/.vscode
