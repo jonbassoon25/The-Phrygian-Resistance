@@ -4,7 +4,7 @@
 # name of the character.
 
 define player = Character("You", color="#f00032")
-define regime_leader = Character("Paladin Victor Franz", color="#880000")
+define resistance_leader_leader = Character("Victor Franz", color="#880000")
 define resistance_fighter = Character("Robert Gustav", color="#00d0d0")
 define unnamed_official = Character("Military Official", color="#990000")
 
@@ -129,12 +129,12 @@ label beginning:
     stop sound fadeout 0.5
     play music "Dystopian-Background.mp3" fadein 2.0 volume 0.15
     
-    menu censor_content:
+    '''menu censor_content:
         "And as you get out of bed you face your first choice, which is displayed via the screen inside your eyes."
         "Censor Graphic Images":
             $ content_censored = True
         "Don't Censor Graphic Images":
-            $ content_censored = False
+            $ content_censored = False'''
     
     "You continue about your morning routine before promptly arriving at your place of work."
 
@@ -389,23 +389,78 @@ label grenade_path:
 
 
 label outskirts_path:
-    pass
+    "You sneak into the camp, finding a lighter resting next to a small pile of coals."
+    "You then collect dry grass and rest it against a building near the camp's outskirts until a small pile accumulates."
+    "Finally, you use the lighter to light it. The small fire catching onto the building."
+    "You manage to quickly exit the camp before anyone has time to see you."
+    "However, they are able to put out the small fire before it can spread."
+    "You watch as the Phrygian's assault fails, eliminating the resistors of The Regime."
+    jump win
 
 
 label center_path:
-    pass
+    "You sneak into the camp, finding a lighter resting next to a small pile of coals."
+    "You then collect dry grass and rest it against a building until a small pile accumulates."
+    "Finally, you use the lighter to light it. The small fire quickly turning into a blazing inferno."
+    "As you attempt to escape, you are spotted by soldiers rushing to put out the fire."
+    "They shoot at you, and you die."
+    "..."
+    "However, your actions were not for nothing. The fires you started spread too quickly for them to be contained."
+    "The entire camp was distracted long enough to allow the Phrygian's assault to succeed."
+    jump win
 
 
 label questioned_allegiance:
-    pass
+    "Then we can deal with you later."
+    "You are left in captivity for a number of hours."
+    "Eventually your captor returns."
+
+    "???" "What do you know about the enemies of The Regime?"
+    menu question7:
+        "There is a resistance group... I read about them in Project Falcon.":
+            "???" "We are that resistance group. The Phrygana."
+        "They don't have any. The Regime is all powerful.":
+            "Your captor leaves."
+            jump servant_death
+    
+    "???" "I am [resistance_leader_leader]. The leader of this resistance."
+    resistance_leader_leader "I will offer you the chance to escape The Regime."
+    resistance_leader_leader "Under the condition that you don't try and go back."
+    resistance_leader_leader "Do you accept these terms?"
+    menu question8:
+        "Yes":
+            resistance_leader_leader "Good. You will be able to begin your new life. Here, with us."
+        "No":
+            "[resistance_leader_leader] leaves."
+            jump servant_death
+
+    "You are then released from your captivity and led outside, to a small village in the center of the forest."
+    "However, you failed to stop The Regime's assault on the only other Phrygian village."
+    "You are able to live happily in this refuge."
+    "At least for a time..."
+    jump win
 
 
 label immoral_path:
-    "Early the next morning, you are woken up at the break of dawn."
+    "The next day, you are brought to a village where you are ordered to destroy it."
+    "Disregarding the civilians living there, you help The Regime in it's attack."
+    "Your actions helping The Regime strengthen it's already strong grasp on the world."
+    jump win
+
+
+label win:
+    scene black
+    with fade
+    "..."
+    "You win?"
+    "..."
+    return
 
 
 label servant_death:
-    pass
+    "The room then fills with an almost clear gas."
+    "You breathe in, feeling it in your lungs, and then you pass out."
+    jump death
 
 
 label helpful_death:
@@ -418,6 +473,4 @@ label death:
     scene black
     with fade
     "You have died. Better luck next time."
-
-    # This ends the game.
     return
