@@ -387,26 +387,31 @@ label grenade_path:
     "You die quickly, but painfully, as your torso is torn apart."
     jump death
 
+
 label outskirts_path:
-    
+    pass
+
 
 label center_path:
+    pass
 
 
 label questioned_allegiance:
+    pass
+
+
+label immoral_path:
+    "Early the next morning, you are woken up at the break of dawn."
 
 
 label servant_death:
+    pass
 
 
 label helpful_death:
     "As the soldiers get closer, they raise their rifles and fire on you and [resistance_fighter]."
     "Both of you are killed."
     jump death
-
-
-label immoral_path:
-    "Early the next morning, you are woken up at the break of dawn."
 
 
 label death:
