@@ -129,13 +129,6 @@ label beginning:
     stop sound fadeout 0.5
     play music "Dystopian-Background.mp3" fadein 2.0 volume 0.15
     
-    '''menu censor_content:
-        "And as you get out of bed you face your first choice, which is displayed via the screen inside your eyes."
-        "Censor Graphic Images":
-            $ content_censored = True
-        "Don't Censor Graphic Images":
-            $ content_censored = False'''
-    
     "You continue about your morning routine before promptly arriving at your place of work."
 
     scene city buildings
